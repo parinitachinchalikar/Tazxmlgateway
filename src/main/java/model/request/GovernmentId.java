@@ -1,4 +1,4 @@
-package model;
+package model.request;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 @XmlRootElement(name = "")
-public class governmentId {
+public class GovernmentId {
 
     //Attributes
     private String issuingAuthority;
@@ -15,10 +15,10 @@ public class governmentId {
     //Elements
     private Date dateOfBirth;
 
-    public governmentId() {
+    public GovernmentId() {
     }
 
-    public governmentId(String issuingAuthority, String jurisdiction, Date dateOfBirth) {
+    public GovernmentId(String issuingAuthority, String jurisdiction, Date dateOfBirth) {
         this.issuingAuthority = issuingAuthority;
         this.jurisdiction = jurisdiction;
         this.dateOfBirth = dateOfBirth;

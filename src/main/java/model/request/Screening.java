@@ -1,11 +1,11 @@
-package model;
+package model.request;
 
 import javax.xml.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
 @XmlRootElement(name = "")
-public class screening {
+public class Screening {
 
     //Attributes
     private String type;
@@ -13,7 +13,7 @@ public class screening {
     private String name;
     private String degreeType;
     //Elements
-    private List<vendor> vendor;
+    private List<Vendor> vendor;
     private String region;
     private String county;
     private String district;
@@ -30,16 +30,16 @@ public class screening {
     private Date stringDate;
     private String panel;
     private String permissiblePurpose;
-    private List<additionalItems> additionalItemsList;
+    private List<AdditionalItems> additionalItemsList;
 
-    public screening() {
+    public Screening() {
     }
 
-    public screening(String type, String qualifier, String name, String degreeType, List<model.vendor> vendor,
+    public Screening(String type, String qualifier, String name, String degreeType, List<Vendor> vendor,
                      String region, String county, String district, String formattedName, String telephone,
                      String relationship, Date startDate, int postalCode, String municipality, String addressLine,
                      String licenseNumber, String schoolName, String degreeName, Date stringDate, String panel,
-                     String permissiblePurpose, List<additionalItems> additionalItemsList) {
+                     String permissiblePurpose, List<AdditionalItems> additionalItemsList) {
         this.type = type;
         this.qualifier = qualifier;
         this.name = name;
@@ -101,11 +101,11 @@ public class screening {
     }
 
     @XmlElement
-    public List<model.vendor> getVendor() {
+    public List<Vendor> getVendor() {
         return vendor;
     }
 
-    public void setVendor(List<model.vendor> vendor) {
+    public void setVendor(List<Vendor> vendor) {
         this.vendor = vendor;
     }
 
@@ -254,11 +254,11 @@ public class screening {
     }
 
     @XmlElement
-    public List<additionalItems> getAdditionalItemsList() {
+    public List<AdditionalItems> getAdditionalItemsList() {
         return additionalItemsList;
     }
 
-    public void setAdditionalItemsList(List<additionalItems> additionalItemsList) {
+    public void setAdditionalItemsList(List<AdditionalItems> additionalItemsList) {
         this.additionalItemsList = additionalItemsList;
     }
 }

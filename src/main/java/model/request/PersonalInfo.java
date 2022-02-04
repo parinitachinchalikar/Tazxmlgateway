@@ -1,13 +1,10 @@
-package model;
+package model.request;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Date;
 import java.util.List;
 
 @XmlRootElement(name = "")
-public class personalInfo {
+public class PersonalInfo {
 
     //Elements
     private String givenName;
@@ -19,14 +16,15 @@ public class personalInfo {
     private String addressLine;
     private String email;
     private int telephone;
-    private List<governmentId> governmentIdList;
+    private List<Aliases> aliasesList;
+    private List<GovernmentId> governmentIdList;
 
-    public personalInfo() {
+    public PersonalInfo() {
     }
 
-    public personalInfo(String givenName, String middleName, String familyName, int postalCode, String region,
-                        String municipality, String addressLine, String email, int telephone,
-                        List<governmentId> governmentIdList) {
+    public PersonalInfo(String givenName, String middleName, String familyName, int postalCode, String region,
+                        String municipality, String addressLine, String email, int telephone, List<Aliases> aliasesList,
+                        List<GovernmentId> governmentIdList) {
         this.givenName = givenName;
         this.middleName = middleName;
         this.familyName = familyName;
@@ -36,6 +34,7 @@ public class personalInfo {
         this.addressLine = addressLine;
         this.email = email;
         this.telephone = telephone;
+        this.aliasesList = aliasesList;
         this.governmentIdList = governmentIdList;
     }
 
@@ -111,17 +110,25 @@ public class personalInfo {
         this.telephone = telephone;
     }
 
-    public List<governmentId> getGovernmentIdList() {
+    public List<Aliases> getAliasesList() {
+        return aliasesList;
+    }
+
+    public void setAliasesList(List<Aliases> aliasesList) {
+        this.aliasesList = aliasesList;
+    }
+
+    public List<GovernmentId> getGovernmentIdList() {
         return governmentIdList;
     }
 
-    public void setGovernmentIdList(List<governmentId> governmentIdList) {
+    public void setGovernmentIdList(List<GovernmentId> governmentIdList) {
         this.governmentIdList = governmentIdList;
     }
 
     @Override
     public String toString() {
-        return "personalInfo{" +
+        return "PersonalInfo{" +
                 "givenName='" + givenName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", familyName='" + familyName + '\'' +
@@ -131,6 +138,7 @@ public class personalInfo {
                 ", addressLine='" + addressLine + '\'' +
                 ", email='" + email + '\'' +
                 ", telephone=" + telephone +
+                ", aliasesList=" + aliasesList +
                 ", governmentIdList=" + governmentIdList +
                 '}';
     }

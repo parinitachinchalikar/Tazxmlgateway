@@ -1,9 +1,9 @@
-package model;
+package model.request;
 
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "")
-public class additionalItems {
+public class AdditionalItems {
 
     //attribute
     private String type;
@@ -11,10 +11,10 @@ public class additionalItems {
     //element
     private String text;
 
-    public additionalItems() {
+    public AdditionalItems() {
     }
 
-    public additionalItems(String type, String text) {
+    public AdditionalItems(String type, String text) {
         this.type = type;
         this.text = text;
     }

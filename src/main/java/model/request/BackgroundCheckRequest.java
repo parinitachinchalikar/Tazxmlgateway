@@ -1,4 +1,4 @@
-package model;
+package model.request;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement(name = "")
-public class backGroundCheckRequest {
+public class BackgroundCheckRequest {
 
     //attributes
     private String userId;
@@ -16,20 +16,20 @@ public class backGroundCheckRequest {
 
     //Elements
     private int refId;
-    private List<personalInfo> personalInfoList;
-    private List<screening> screeningList;
+    private PersonalInfo personalInfo;
+    private List<Screening> screeningList;
 
-    public backGroundCheckRequest() {
+    public BackgroundCheckRequest() {
     }
 
-    public backGroundCheckRequest(String userId, String password, String action, String type, int refId,
-                                  List<personalInfo> personalInfoList, List<screening> screeningList) {
+    public BackgroundCheckRequest(String userId, String password, String action, String type, int refId,
+                                  PersonalInfo personalInfo, List<Screening> screeningList) {
         this.userId = userId;
         this.password = password;
         this.action = action;
         this.type = type;
         this.refId = refId;
-        this.personalInfoList = personalInfoList;
+        this.personalInfo = personalInfo;
         this.screeningList = screeningList;
     }
 
@@ -79,20 +79,20 @@ public class backGroundCheckRequest {
     }
 
     @XmlElement
-    public List<personalInfo> getPersonalInfoList() {
-        return personalInfoList;
+    public PersonalInfo getPersonalInfo() {
+        return personalInfo;
     }
 
-    public void setPersonalInfoList(List<personalInfo> personalInfoList) {
-        this.personalInfoList = personalInfoList;
+    public void setPersonalInfo(PersonalInfo personalInfo) {
+        this.personalInfo = personalInfo;
     }
 
     @XmlElement
-    public List<screening> getScreeningList() {
+    public List<Screening> getScreeningList() {
         return screeningList;
     }
 
-    public void setScreeningList(List<screening> screeningList) {
+    public void setScreeningList(List<Screening> screeningList) {
         this.screeningList = screeningList;
     }
 
@@ -104,7 +104,7 @@ public class backGroundCheckRequest {
                 ", action='" + action + '\'' +
                 ", type='" + type + '\'' +
                 ", refId=" + refId +
-                ", personalInfoList=" + personalInfoList +
+                ", personalInfo=" + personalInfo +
                 ", screeningList=" + screeningList +
                 '}';
     }

@@ -1,12 +1,10 @@
-package model;
+package model.request;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "")
-public class vendor {
+public class Vendor {
 
     //attributes
     private String score;
@@ -14,10 +12,10 @@ public class vendor {
     private String type;
     private String highRiskFraudAlert;
 
-    public vendor() {
+    public Vendor() {
     }
 
-    public vendor(String score, String fraud, String type, String highRiskFraudAlert) {
+    public Vendor(String score, String fraud, String type, String highRiskFraudAlert) {
         this.score = score;
         this.fraud = fraud;
         this.type = type;
