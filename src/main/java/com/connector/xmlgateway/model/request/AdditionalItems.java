@@ -1,8 +1,8 @@
-package model.request;
+package com.connector.xmlgateway.model.request;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "")
+@XmlRootElement(name = "AdditionalItems")
 public class AdditionalItems {
 
     //attribute

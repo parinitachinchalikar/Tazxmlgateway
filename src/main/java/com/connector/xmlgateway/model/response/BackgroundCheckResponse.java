@@ -1,8 +1,8 @@
-package model.response;
+package com.connector.xmlgateway.model.response;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "")
+@XmlRootElement(name = "BackgroundCheck")
 public class BackgroundCheckResponse {
 
     private int refId;

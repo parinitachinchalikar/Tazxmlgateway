@@ -1,10 +1,12 @@
-package model.request;
+package com.connector.xmlgateway.model.request;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "")
+@XmlRootElement(name = "Aliases")
 public class Aliases {
 
+    //Elements
+    private String personName;
     private String givenName;
     private String middleName;
     private String familyName;
@@ -12,10 +14,19 @@ public class Aliases {
     public Aliases() {
     }
 
-    public Aliases(String givenName, String middleName, String familyName) {
+    public Aliases(String personName, String givenName, String middleName, String familyName) {
+        this.personName = personName;
         this.givenName = givenName;
         this.middleName = middleName;
         this.familyName = familyName;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
     }
 
     public String getGivenName() {
@@ -45,7 +56,8 @@ public class Aliases {
     @Override
     public String toString() {
         return "Aliases{" +
-                "givenName='" + givenName + '\'' +
+                "personName='" + personName + '\'' +
+                ", givenName='" + givenName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", familyName='" + familyName + '\'' +
                 '}';

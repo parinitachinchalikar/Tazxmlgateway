@@ -1,26 +1,34 @@
-package model.request;
+package com.connector.xmlgateway.model.request;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
-@XmlRootElement(name = "")
-public class GovernmentId {
+@XmlRootElement(name = "DemographicDetail")
+public class DemographicDetail {
 
     //Attributes
+    @XmlAttribute
     private String issuingAuthority;
+
+    @XmlAttribute
     private String jurisdiction;
 
     //Elements
+    @XmlElement
+    private int govId;
+
+    @XmlElement
     private Date dateOfBirth;
 
-    public GovernmentId() {
+    public DemographicDetail() {
     }
 
-    public GovernmentId(String issuingAuthority, String jurisdiction, Date dateOfBirth) {
+    public DemographicDetail(String issuingAuthority, String jurisdiction, int govId, Date dateOfBirth) {
         this.issuingAuthority = issuingAuthority;
         this.jurisdiction = jurisdiction;
+        this.govId = govId;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -40,6 +48,15 @@ public class GovernmentId {
 
     public void setJurisdiction(String jurisdiction) {
         this.jurisdiction = jurisdiction;
+    }
+
+    @XmlElement
+    public int getGovId() {
+        return govId;
+    }
+
+    public void setGovId(int govId) {
+        this.govId = govId;
     }
 
     @XmlElement

@@ -1,18 +1,21 @@
-package model.request;
+package com.connector.xmlgateway.model.request;
 
 import javax.xml.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
-@XmlRootElement(name = "")
-public class Screening {
+@XmlRootElement(name = "Screenings")
+public class Screenings {
 
     //Attributes
+    @XmlAttribute
     private String type;
     private String qualifier;
     private String name;
     private String degreeType;
+
     //Elements
+    private String screening;
     private List<Vendor> vendor;
     private String region;
     private String county;
@@ -32,18 +35,19 @@ public class Screening {
     private String permissiblePurpose;
     private List<AdditionalItems> additionalItemsList;
 
-    public Screening() {
+    public Screenings() {
     }
 
-    public Screening(String type, String qualifier, String name, String degreeType, List<Vendor> vendor,
-                     String region, String county, String district, String formattedName, String telephone,
-                     String relationship, Date startDate, int postalCode, String municipality, String addressLine,
-                     String licenseNumber, String schoolName, String degreeName, Date stringDate, String panel,
-                     String permissiblePurpose, List<AdditionalItems> additionalItemsList) {
+    public Screenings(String type, String qualifier, String name, String degreeType, String screening,
+                      List<Vendor> vendor, String region, String county, String district, String formattedName,
+                      String telephone, String relationship, Date startDate, int postalCode, String municipality,
+                      String addressLine, String licenseNumber, String schoolName, String degreeName, Date stringDate,
+                      String panel, String permissiblePurpose, List<AdditionalItems> additionalItemsList) {
         this.type = type;
         this.qualifier = qualifier;
         this.name = name;
         this.degreeType = degreeType;
+        this.screening = screening;
         this.vendor = vendor;
         this.region = region;
         this.county = county;
@@ -98,6 +102,15 @@ public class Screening {
 
     public void setDegreeType(String degreeType) {
         this.degreeType = degreeType;
+    }
+
+    @XmlElement
+    public String getScreening() {
+        return screening;
+    }
+
+    public void setScreening(String screening) {
+        this.screening = screening;
     }
 
     @XmlElement

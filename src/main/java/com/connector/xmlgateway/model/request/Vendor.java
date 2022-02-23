@@ -1,9 +1,9 @@
-package model.request;
+package com.connector.xmlgateway.model.request;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "")
+@XmlRootElement(name = "Vendor")
 public class Vendor {
 
     //attributes
@@ -12,14 +12,18 @@ public class Vendor {
     private String type;
     private String highRiskFraudAlert;
 
+    //Elements
+    private String vendor;
+
     public Vendor() {
     }
 
-    public Vendor(String score, String fraud, String type, String highRiskFraudAlert) {
+    public Vendor(String score, String fraud, String type, String highRiskFraudAlert, String vendor) {
         this.score = score;
         this.fraud = fraud;
         this.type = type;
         this.highRiskFraudAlert = highRiskFraudAlert;
+        this.vendor = vendor;
     }
 
     @XmlAttribute
@@ -58,13 +62,22 @@ public class Vendor {
         this.highRiskFraudAlert = highRiskFraudAlert;
     }
 
+    public String getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
+
     @Override
     public String toString() {
-        return "vendor{" +
+        return "Vendor{" +
                 "score='" + score + '\'' +
                 ", fraud='" + fraud + '\'' +
                 ", type='" + type + '\'' +
                 ", highRiskFraudAlert='" + highRiskFraudAlert + '\'' +
+                ", vendor='" + vendor + '\'' +
                 '}';
     }
 }
