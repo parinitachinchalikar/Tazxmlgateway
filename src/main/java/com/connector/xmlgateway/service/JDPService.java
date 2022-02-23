@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 @Service
-@PropertySource("file:application.properties")
+@PropertySource("classpath:application.properties")
 public class JDPService {
 
     @Autowired
